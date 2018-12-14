@@ -18,7 +18,7 @@ print(someWords)
 
 View(someWords)     # You can also type this into the console
                     # --OR-- If it's an object with more complex dimensional properties =====>>
-                    #  you can click on it in the Environment pane to the right         =====>>
+                    # you can click on it in the Environment pane to the right          =====>>
 
 #   c) Here are some more objects
 aNumber <- 12345
@@ -35,7 +35,13 @@ someMatrix = as.matrix(cbind(roundedRandomVector, round(runif(100, 0.0, 1.0), 2)
 
 matrix2DataFrame = data.frame(someMatrix)
 
-someList = list(someWords, aNumber, aTrueOrFalseThing, aRandomVector, roundedRandomVector, someMatrix, matrix2DataFrame)
+someList = list(someWords,
+                aNumber,
+                aTrueOrFalseThing,
+                aRandomVector,
+                roundedRandomVector,
+                someMatrix,
+                matrix2DataFrame)
 
 # 2) GO GIT SOME DATA
 #   c) You can also type this into the same line
@@ -49,6 +55,10 @@ data <- read.csv(data)
 
 # 3) Do some things to the data
 #   a) subsets of the data
+View(data)
+
+str(data)
+
 View(data$DATE)
 
 data[849, 3]
@@ -56,17 +66,24 @@ data[849, 3]
 View(data[1 : 10, ])
 
 #   b) coerce data into correct formats
-data$DATE = as.Date(data$DATE, format = "%m/%d/%Y")
+data$date.date <- as.Date(data$DATE, format = "%m/%d/%Y")
 
 str(data)
 
-data$DATE = as.POSIXct(data$DATE, format = "%Y-%m-%d", tz = 'America/Los_Angeles')
+data$PosixDate <- as.POSIXct(data$DATE, format = "%Y-%m-%d", tz = 'America/Los_Angeles')
 
-data$DATE = data$DATE + hours(7)
+data$Posix <- as.POSIXct(data$DATE, format = "%m/%d/%Y", tz = 'America/Los_Angeles')
 
-data$DATE = ifelse(hour(data$DATE) == 23, data$DATE + hours(1), data$DATE)
+data$strptime <- strptime(data$DATE, format = "%m/%d/%Y", tz = 'America/Los_Angeles')
 
-data$DATE = as.POSIXct(data$DATE, origin = '1970-01-01')
+# POSIXct stores seconds since UNIX epoch (plus some other data)
+# POSIXlt stores a list of day, month, year, hour, minute, second, etc.
+
+data$DATE <- data$DATE + hours(7)
+
+data$DATE <- ifelse(hour(data$DATE) == 23, data$DATE + hours(1), data$DATE)
+
+data$DATE <- as.POSIXct(data$DATE, origin = '1970-01-01')
 
 # 4) Plot the data
 #   a) base
