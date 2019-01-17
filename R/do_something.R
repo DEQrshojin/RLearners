@@ -113,6 +113,10 @@ flowPlot2 <- ggplot(sameDate,
 
 plot(flowPlot2)
 
+ggsave(filename, plot = last_plot(), device = NULL, path = NULL,
+       scale = 1, width = NA, height = NA, units = c("in", "cm", "mm"),
+       dpi = 300, limitsize = TRUE, ...)
+
 # 5) Analyze the data
 #   a) Rename the columns of the 'sameData' data frame
 names(sameData) = c('date', 'srce', 'q_cfs')

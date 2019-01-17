@@ -60,7 +60,7 @@ someList = list(someWords,
 # arguments in we're passing to a function that creates lists.
 
 # 2) Go get some data! ----
-data <- read.csv('E:/R/RLearners/R/data/flow_data.csv') # Reads from a local directory.
+data <- read.csv('E:/R/RLearners/R/data/flow_data.csv', stringsAsFactors = FALSE) # Reads from a local directory.
 # Remember to use the forward slash '/' rather than the back slash '\' because the '\' is a special
 # operator called an escape. Here is a mnemonic to help remember the difference between back and
 # forward slashes: https://twitter.com/reverentgeek/status/789135336437800960
@@ -93,13 +93,13 @@ tail(data) # Looks at the last 6 lines of data
 
 #     a) Subsetting data
 x <- data[data$Model <= 100, ]       # Fastest RMS to benchmark
-y <- subset(data, data[, 2] < 100)
-z <- filter(data, data[, 2] < 100)
-# My benchmarking indicates that filter (0.13 seconds) is the fastest, and subset (0.28 seconds)
-# is the slowest.
+
+y <- subset(data, data[, 2] <= 100)
+
+z <- filter(data, data[, 2] <= 100)
 
 #     b) Coercing data
-data$date.date <- as.Date(data$DATE, format = "%m/%d/%Y")
+data$DATE <- as.Date(data$DATE, format = "%m/%d/%Y")
 
 data$PosixDate <- as.POSIXct(data$DATE, format = "%m/%d/%Y", tz = 'America/Los_Angeles')
 
@@ -131,6 +131,26 @@ dateofSeconds <- dateofSeconds + 7 * 3600 # does the same thing as preceeding li
 #     a) Base graphing
 
 #     b) ggplot
+library(ggplot2)
+library(reshape2)
+
+ryansData <- data
+ryansData2 <- melt(ryansData, id.vars = 'DATE', variable.name = 'SET',
+                   value.name = "FLOW")
+
+
+# What packages are in tidyverse?
+lims <- as.Date(c('1/1/2010', '1/1/2011'), "%m/%d/%Y")
+
+
+
+flowPlot1 <- ggplot() + 
+  + geom_point() + scale_x_date(breaks = "1 year", limits = lims) + theme_bw() + 
+  scale_y_log10()
+
+
+flowPlot1
+
 
 # 5) Analyze the data ----
 
