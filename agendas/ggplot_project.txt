@@ -1,33 +1,62 @@
-GGPLOT PROJECT PROPOSAL
+-------------------------------------------------------------------------------
+                          GGPLOT PROJECT PROPOSAL
+-------------------------------------------------------------------------------
 
 Objective: Repurpose WQ plot from base graphics to ggplot
 
 Client: Jim Bloom and the Coquille DO TMDL
 
-Description: A few weeks ago, we looked at some scripts for plotting in base graphics.
-This project will convert one of those plots to ggplot2. This conversion will include
-all processing and analysis of raw data to arrive at a reasonable facsimile of the
-original product.
+Consultant: DEQ R Learners Group
 
-Basic rules:
-1)	Project resources (volunteers):
-    a.	Project manager
-    b.	Wo-R-ker Bees (git it?)
-2)	Each bee will be assigned a random roster number to determine the task assignment order.
-3)	First task: PM organizes project into however many discrete tasks. This doesn't need to
-    be done alone
-4)	Each bee will have a turn at working on the task according to the assigned order.
-5)	Bees work on that task for 30 minutes then hand off to the next rostered bee.
-6)	Bees have two days to begin a task, otherwise hand off to the next rostered bee.
-7)	The roster rolls over a task until it is complete.
-8)	When a task is complete, the next person on the roster begins the next task.
-9)	After each person is done with their task assignment, the solution is posted to GitHub
-    using Colin’s step-by-step for Status and Trends.
-10)	The subsequent worker bee has to use whatever portion of code developed by the previous
-    worker bee(s). You can’t just scrap the solution and start over, unless the solution
-    patently does not work. This will be managed by the PM.
-11)	Comment, comment, comment. Make sure to leave instructions or ideas for the next person.
-12)	Obviously you’re not required to do this-—you have deadlines or are simply recalcitrant—-
-    but your level or effort will determine the size of your participatory trophy*!
+-------------------------------------------------------------------------------
+PROJECT DESCRIPTION
+A few weeks ago, we looked at some scripts for plotting in base graphics. This 
+project will convert one of those plots to ggplot2. This conversion will
+include all processing and analysis of raw data to arrive at a reasonable
+facsimile of the original product.
 
-* There are no participatory trophies.
+-------------------------------------------------------------------------------
+DEFINITIONS
+PM - Project Manager
+R1 - Resource 1, etc.
+T1 - Task 1, etc.
+
+-------------------------------------------------------------------------------
+PROCESS FLOW
+1. PM examines task list
+2. PM develops project scope and schedule
+3. PM publishes project specification on GitHub
+4. R1
+	a. Begins working on T1
+	a. Works on T1 until T1 is finished or 30 minutes has passed - whichever 
+	   comes first
+	b. Posts T1 code to GitHub
+5. R2
+	a. Retrieves most recent work from GitHub
+	b. Begins working on T1 (not finished) or T2 (T1 is finished), referred to
+	   as TX hereafter
+	c. Works on TX until TX is finished or 30 minutes has passed - whichever 
+	   comes first
+	d. Posts TX code to GitHub
+6. R3
+	a. Wash
+	b. Rinse
+	c. Post to GitHub
+.
+.
+.
+
+N. Job done--delivert product, let's have a pint.
+
+-------------------------------------------------------------------------------
+ANCILLARY
+1. PM is the arbiter of discrepancies and disagreements -- let's hope they're 
+   not a despot!
+2. Resources have three business days to BEING a task, otherwise hand off to 
+   the next rostered resource.
+3. The roster rolls over a task until it is complete.
+4. A subsequent resource has to use whatever portion of code developed by the
+   previous resource(s). You can’t just scrap the solution and start over,
+   unless the solution patently does not work. This will be managed by the PM.
+5. Comment, comment, comment. Make sure to leave instructions or ideas for the
+   next person.
