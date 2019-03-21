@@ -60,3 +60,7 @@ ANCILLARY
    unless the solution patently does not work. This will be managed by the PM.
 5. Comment, comment, comment. Make sure to leave instructions or ideas for the
    next person.
+6. Oh, yeah, as a handicap to the more advance learners (you know who you are),
+   you are not allowed to use functions that you would otherwise access out of
+   hand. You have to find new and novel ways to accomplish what you would have
+   otherwise done in a few minutes. Karma will be the judge on this one.
